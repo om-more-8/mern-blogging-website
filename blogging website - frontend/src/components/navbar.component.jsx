@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import logo from "../imgs/fire.png";
 
 
+
+
 const Navbar = () => {
     const [searchBoxVisibility, setSearchBoxVisibility] = useState(false)
     return (
