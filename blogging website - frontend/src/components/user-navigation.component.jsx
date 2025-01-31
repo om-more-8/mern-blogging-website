@@ -3,16 +3,24 @@ import AnimationWrapper from "../common/page-animation";
 import { Link } from "react-router-dom";
 import { UserContext } from "../App";
 import { removerFromSession } from "../common/session";
+import { useNavigate } from "react-router-dom";
+
 
 
 const UserNavigationPanel = () => {
 
     const { userAuth: { username }, setUserAuth } = useContext(UserContext);
 
+
+
+    const navigate = useNavigate();
     const signOutUser = () => {
-        removerFromSession("user")
-        setUserAuth({ access_token: null })
-    }
+        removerFromSession("user");
+
+        setUserAuth({});
+
+        navigate("/signin");
+    };
     return (
         <AnimationWrapper
             transition={{ duration: 0.2 }}
